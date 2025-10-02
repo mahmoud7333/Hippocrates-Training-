@@ -10,8 +10,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-dark-blue: #0D47A1;
+            --primary-gray: #424242;
+            --primary-white: #FFFFFF;
+            --secondary-light-blue: #90CAF9;
+            --secondary-light-green: #43A047;
+            --secondary-light-gray: #F5F5F5;
+            --cta-green: #66BB6A;
+            --cta-green-dark: #2E7D32;
+            --alert-orange: #FFA726;
+        }
+
         body {
             font-family: 'Cairo', sans-serif;
+            background-color: var(--secondary-light-gray);
+            color: var(--primary-gray);
         }
         [lang="en"] body {
             font-family: 'Poppins', sans-serif;
@@ -20,10 +34,12 @@
             scroll-behavior: smooth;
         }
         .section-title {
-            @apply text-3xl md:text-4xl font-bold text-center mb-12 text-indigo-500;
+            color: var(--primary-dark-blue);
+            @apply text-3xl md:text-4xl font-bold text-center mb-12;
         }
         .card {
-            @apply bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-indigo-500/50 transform hover:-translate-y-2 transition-all duration-300;
+            background-color: var(--primary-white);
+            @apply p-6 rounded-lg shadow-lg hover:shadow-lg transform hover:-translate-y-2 transition-all duration-300;
         }
         /* Styles for scroll animations */
         .reveal {
@@ -61,10 +77,10 @@
 
         @keyframes pulse {
             0%, 100% {
-                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+                box-shadow: 0 0 0 0 rgba(102, 187, 106, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+                box-shadow: 0 0 0 10px rgba(102, 187, 106, 0);
             }
         }
 
@@ -84,7 +100,7 @@
         /* Enhanced hover for nav links */
         .nav-link-underline {
             position: relative;
-            padding-bottom: 6px; /* Increased padding for better visual spacing */
+            padding-bottom: 6px;
         }
         .nav-link-underline::after {
             content: '';
@@ -94,7 +110,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background-color: #6366f1; /* indigo-500 */
+            background-color: var(--cta-green);
             transition: width 0.3s ease-out;
         }
         .nav-link-underline:hover::after {
@@ -102,13 +118,13 @@
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white scroll-smooth">
+<body class="scroll-smooth">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-gray-900 flex justify-center items-center z-[9999] transition-opacity duration-1000 ease-in-out">
+    <div id="preloader" class="fixed top-0 left-0 w-full h-full flex justify-center items-center z-[9999] transition-opacity duration-1000 ease-in-out" style="background-color: var(--secondary-light-gray);">
         <div class="text-center">
             <img src="https://i.imgur.com/vEQQB9o.png" alt="شعار أكاديمية أبقراط للتحميل" class="h-24 w-auto animate-pulse mx-auto">
-            <h2 class="text-2xl font-bold text-gray-300 mt-6 animate-fade-in-up" style="animation-delay: 200ms;">
+            <h2 class="text-2xl font-bold mt-6 animate-fade-in-up" style="animation-delay: 200ms; color: var(--primary-gray);">
                 <span data-lang="ar">أكاديمية أبقراط للتدريب</span>
                 <span data-lang="en" class="hidden">Hippocrates Training Academy</span>
             </h2>
@@ -117,7 +133,7 @@
 
     <!-- Main Content Wrapper -->
     <div id="main-content" class="opacity-0 transition-opacity duration-1000 ease-in">
-        <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <header class="backdrop-blur-sm sticky top-0 z-50 shadow-lg" style="background-color: rgba(13, 71, 161, 0.9);">
             <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
                 <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <img src="https://i.imgur.com/vEQQB9o.png" alt="شعار أكاديمية أبقراط" class="h-16 w-auto">
@@ -128,14 +144,14 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-1">
                     <ul class="flex items-center space-x-2">
-                        <li><a href="#vision" class="nav-link-underline text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
-                        <li><a href="#goals" class="nav-link-underline text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
-                        <li><a href="#courses" class="nav-link-underline text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></a></li>
-                        <li><a href="#team" class="nav-link-underline text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
-                        <li><a href="#partners" class="nav-link-underline text-gray-300 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
-                        <li><a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
+                        <li><a href="#vision" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
+                        <li><a href="#goals" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
+                        <li><a href="#courses" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></a></li>
+                        <li><a href="#team" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
+                        <li><a href="#partners" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
+                        <li><a href="#contact" class="text-white px-4 py-2 rounded-md font-medium transition-colors duration-300" style="background-color: var(--cta-green);"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
                     </ul>
-                    <button id="lang-switcher" class="text-gray-300 hover:bg-gray-700 w-12 px-3 py-2 rounded-md font-medium">EN</button>
+                    <button id="lang-switcher" class="text-gray-200 hover:bg-blue-800 w-12 px-3 py-2 rounded-md font-medium">EN</button>
                 </div>
                 <button id="mobile-menu-button" class="md:hidden text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -144,29 +160,29 @@
                 </button>
             </nav>
             <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-                <ul class="flex flex-col">
-                    <li><a href="#vision" class="block py-2 hover:text-indigo-400 transition"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
-                    <li><a href="#goals" class="block py-2 hover:text-indigo-400 transition"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
-                    <li><a href="#courses" class="block py-2 hover:text-indigo-400 transition"><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></a></li>
-                    <li><a href="#team" class="block py-2 hover:text-indigo-400 transition"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
-                    <li><a href="#partners" class="block py-2 hover:text-indigo-400 transition"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
-                    <li><a href="#contact" class="block mt-2 bg-indigo-600 px-4 py-2 rounded-md hover:bg-indigo-700 transition text-center"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
+                <ul class="flex flex-col text-white">
+                    <li><a href="#vision" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
+                    <li><a href="#goals" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
+                    <li><a href="#courses" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></a></li>
+                    <li><a href="#team" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
+                    <li><a href="#partners" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
+                    <li><a href="#contact" class="block mt-2 px-4 py-2 rounded-md transition text-center" style="background-color: var(--cta-green);"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
                 </ul>
-                <button id="mobile-lang-switcher" class="block mt-4 w-full bg-gray-700 px-4 py-2 rounded-md hover:bg-gray-600 transition text-center">EN</button>
+                <button id="mobile-lang-switcher" class="block mt-4 w-full bg-blue-800 px-4 py-2 rounded-md hover:bg-blue-700 transition text-center text-white">EN</button>
             </div>
         </header>
 
-        <section class="min-h-screen bg-cover bg-center flex items-center justify-center" style="background-image: linear-gradient(rgba(18, 24, 42, 0.8), rgba(18, 24, 42, 0.8)), url('https://i.imgur.com/asFQrUJ.png');">
-            <div class="text-center p-8">
+        <section class="min-h-screen bg-cover bg-center flex items-center justify-center" style="background-image: linear-gradient(rgba(13, 71, 161, 0.7), rgba(13, 71, 161, 0.7)), url('https://i.imgur.com/asFQrUJ.png');">
+            <div class="text-center p-8 text-white">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight animate-fade-in-down">
                     <span data-lang="ar">أكاديمية أبقراط للتدريب</span>
                     <span data-lang="en" class="hidden">Hippocrates Training Academy</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 300ms;">
+                <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 300ms;">
                     <span data-lang="ar">نحو الريادة والابتكار في التدريب والتطوير في المجالات الصحية، الطبية، الإدارية، والتقنية.</span>
                     <span data-lang="en" class="hidden">Towards leadership and innovation in training and development in the health, medical, administrative, and technical fields.</span>
                 </p>
-                <a href="#about" class="mt-8 inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition-transform transform hover:scale-105 animate-pulse-slow" style="animation-delay: 600ms;">
+                <a href="#about" class="mt-8 inline-block text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:scale-105 animate-pulse-slow" style="background-color: var(--cta-green); animation-delay: 600ms;">
                     <span data-lang="ar">اكتشف المزيد</span>
                     <span data-lang="en" class="hidden">Discover More</span>
                 </a>
@@ -184,7 +200,7 @@
                     <div class="md:w-1/2">
                         <img src="https://i.imgur.com/Aah0DvS.png" alt="صورة لفريق عمل أكاديمية أبقراط أثناء اجتماع" class="rounded-lg shadow-2xl">
                     </div>
-                    <div class="md:w-1/2 text-lg text-gray-300 space-y-4 text-start">
+                    <div class="md:w-1/2 text-lg text-gray-700 space-y-4 text-start">
                         <p data-lang="ar">تأسست أكاديمية أبقراط للتدريب عام 2022 كأكاديمية متخصصة في التدريب والاستشارات في المجالات الصحية، الطبية، الإدارية، والتقنية.</p>
                         <p data-lang="en" class="hidden">Hippocrates Training Academy was established in 2022 as a specialized academy in training and consulting in the health, medical, administrative, and technical areas.</p>
                         
@@ -203,32 +219,38 @@
                     <span data-lang="en" class="hidden">By The Numbers</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="card p-8 text-center reveal" style="transition-delay: 100ms; background-image: radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.1), transparent 50%);">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <h3 class="text-5xl font-extrabold text-white"><span class="counter" data-target="1500">0</span>+</h3>
-                        <p class="text-gray-400 text-lg mt-2">
+                    <div class="card p-8 text-center reveal" style="transition-delay: 100ms;">
+                        <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-5xl font-extrabold"><span class="counter" data-target="1500">0</span>+</h3>
+                        <p class="text-gray-500 text-lg mt-2">
                             <span data-lang="ar">متدرب</span>
                             <span data-lang="en" class="hidden">Trainees</span>
                         </p>
                     </div>
-                    <div class="card p-8 text-center reveal" style="transition-delay: 200ms; background-image: radial-gradient(circle at 50% 10%, rgba(99, 102, 241, 0.1), transparent 50%);">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <h3 class="text-5xl font-extrabold text-white"><span class="counter" data-target="50">0</span>+</h3>
-                        <p class="text-gray-400 text-lg mt-2">
+                    <div class="card p-8 text-center reveal" style="transition-delay: 200ms;">
+                        <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="text-5xl font-extrabold"><span class="counter" data-target="50">0</span>+</h3>
+                        <p class="text-gray-500 text-lg mt-2">
                             <span data-lang="ar">دورة تدريبية</span>
                             <span data-lang="en" class="hidden">Training Courses</span>
                         </p>
                     </div>
-                    <div class="card p-8 text-center reveal" style="transition-delay: 300ms; background-image: radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.1), transparent 50%);">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto mb-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                        </svg>
-                        <h3 class="text-5xl font-extrabold text-white"><span class="counter" data-target="1200">0</span>+</h3>
-                        <p class="text-gray-400 text-lg mt-2">
+                    <div class="card p-8 text-center reveal" style="transition-delay: 300ms;">
+                        <div class="mx-auto flex items-center justify-center h-20 w-20 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-5xl font-extrabold"><span class="counter" data-target="1200">0</span>+</h3>
+                        <p class="text-gray-500 text-lg mt-2">
                             <span data-lang="ar">شهادة معتمدة</span>
                             <span data-lang="en" class="hidden">Certified Certificates</span>
                         </p>
@@ -242,21 +264,32 @@
                     <span data-lang="en" class="hidden">Vision & Mission</span>
                 </h2>
                 <div class="grid md:grid-cols-2 gap-12">
-                    <div class="card reveal text-start" style="transition-delay: 100ms;">
-                        <h3 class="text-2xl font-bold text-indigo-400 mb-4">
+                    <div class="card reveal text-center p-8" style="transition-delay: 100ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-dark-blue);">
                             <span data-lang="ar">رؤيتنا</span>
                             <span data-lang="en" class="hidden">Our Vision</span>
                         </h3>
-                        <p class="text-gray-300" data-lang="ar">تسعى أكاديمية أبقراط للتدريب لتكون مركزاً تدريبياً رائداً ومتميزاً محلياً وإقليمياً، يركز على تطوير وتعزيز الكوادر الصحية والإدارية والفنية. تهدف الأكاديمية إلى تحقيق الريادة والابتكار والإبداع مع الحفاظ على اعتبارات التكلفة المعقولة.</p>
-                        <p class="text-gray-300" data-lang="en" class="hidden">Hippocrates Training Academy strives to be a leading and distinguished training center locally and regionally, focusing on the development and enhancement of healthcare, administrative, and technical personnel. The academy aims to achieve leadership, innovation, and creativity while maintaining reasonable cost considerations.</p>
+                        <p class="text-gray-600" data-lang="ar">تسعى أكاديمية أبقراط للتدريب لتكون مركزاً تدريبياً رائداً ومتميزاً محلياً وإقليمياً، يركز على تطوير وتعزيز الكوادر الصحية والإدارية والفنية. تهدف الأكاديمية إلى تحقيق الريادة والابتكار والإبداع مع الحفاظ على اعتبارات التكلفة المعقولة.</p>
+                        <p class="text-gray-600" data-lang="en" class="hidden">Hippocrates Training Academy strives to be a leading and distinguished training center locally and regionally, focusing on the development and enhancement of healthcare, administrative, and technical personnel. The academy aims to achieve leadership, innovation, and creativity while maintaining reasonable cost considerations.</p>
                     </div>
-                    <div class="card reveal text-start" style="transition-delay: 300ms;">
-                        <h3 class="text-2xl font-bold text-indigo-400 mb-4">
+                    <div class="card reveal text-center p-8" style="transition-delay: 300ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                             </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-dark-blue);">
                             <span data-lang="ar">رسالتنا</span>
                             <span data-lang="en" class="hidden">Our Mission</span>
                         </h3>
-                        <p class="text-gray-300" data-lang="ar">تقديم دورات متخصصة وورش عمل تدريبية متميزة وفقاً للمعايير المعترف بها دولياً وأعلى معايير الجودة والريادة والابتكار. وذلك لتلبية احتياجات وتطلعات الفئات المستهدفة بهدف تطوير قدراتهم أكاديمياً وعملياً، مما ينعكس إيجاباً على المجتمع.</p>
-                        <p class="text-gray-300" data-lang="en" class="hidden">Providing specialized courses and distinguished training workshops according to internationally recognized standards and the highest benchmarks of quality, leadership, and innovation. This is to meet the needs and aspirations of the targeted groups with the aim of developing their capabilities both academically and practically, which positively reflects on society.</p>
+                        <p class="text-gray-600" data-lang="ar">تقديم دورات متخصصة وورش عمل تدريبية متميزة وفقاً للمعايير المعترف بها دولياً وأعلى معايير الجودة والريادة والابتكار. وذلك لتلبية احتياجات وتطلعات الفئات المستهدفة بهدف تطوير قدراتهم أكاديمياً وعملياً، مما ينعكس إيجاباً على المجتمع.</p>
+                        <p class="text-gray-600" data-lang="en" class="hidden">Providing specialized courses and distinguished training workshops according to internationally recognized standards and the highest benchmarks of quality, leadership, and innovation. This is to meet the needs and aspirations of the targeted groups with the aim of developing their capabilities both academically and practically, which positively reflects on society.</p>
                     </div>
                 </div>
             </section>
@@ -266,12 +299,12 @@
                    <span data-lang="ar">هدفنا الرئيسي</span>
                    <span data-lang="en" class="hidden">Our Goal</span>
                 </h2>
-                <div class="bg-gray-800 p-8 md:p-12 rounded-lg">
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-md">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div>
                             <img src="https://i.imgur.com/kkpIRBC.png" alt="صورة توضيحية لهدفنا الرئيسي" class="rounded-lg shadow-2xl w-full h-full object-cover">
                         </div>
-                        <div class="text-lg text-gray-300 space-y-4 text-start">
+                        <div class="text-lg text-gray-700 space-y-4 text-start">
                              <p data-lang="ar">تهدف أكاديمية أبقراط للتدريب إلى تأهيل وتطوير القوى العاملة في المؤسسات الخاصة والحكومية لأداء مهامهم الموكلة إليهم بكفاءة وتميز. يتم ذلك من خلال تزويدهم، وفقاً لاحتياجاتهم، بالمعرفة العميقة والمهارات اللازمة للأداء المتميز من حيث الجودة وتقديم الخدمات والتفاعل مع الآخرين، والتطوير المستمر للبرامج التدريبية وطرق إعدادها، وتعزيز مهارات وقدرات القائمين عليها.</p>
                              <p data-lang="en" class="hidden">Hippocrates Training Academy aims to qualify and develop the workforce in private and government institutions to efficiently and excellently perform their assigned tasks. This is achieved by providing them, according to their needs, with deep knowledge and necessary skills required for outstanding performance in terms of quality, service delivery, interaction with others, and continuous development of training programs and their preparation methods, enhancing the skills and abilities of those delivering them.</p>
                         </div>
@@ -285,21 +318,41 @@
                     <span data-lang="en" class="hidden">Our Objectives</span>
                 </h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="card text-center reveal" style="transition-delay: 100ms;">
-                        <h3 class="text-xl font-bold mb-3 text-indigo-400"><span data-lang="ar">بيئة تدريبية متميزة</span><span data-lang="en" class="hidden">Excellent Training Environment</span></h3>
-                        <p class="text-gray-400"><span data-lang="ar">توفير بيئة تدريبية محفزة ومجهزة بأحدث الوسائل.</span><span data-lang="en" class="hidden">Providing a distinguished and motivating training environment.</span></p>
+                    <div class="card text-center reveal p-8" style="transition-delay: 100ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-dark-blue);"><span data-lang="ar">بيئة تدريبية متميزة</span><span data-lang="en" class="hidden">Excellent Training Environment</span></h3>
+                        <p class="text-gray-500"><span data-lang="ar">توفير بيئة تدريبية محفزة ومجهزة بأحدث الوسائل.</span><span data-lang="en" class="hidden">Providing a distinguished and motivating training environment.</span></p>
                     </div>
-                    <div class="card text-center reveal" style="transition-delay: 200ms;">
-                        <h3 class="text-xl font-bold mb-3 text-indigo-400"><span data-lang="ar">دورات تلبي الاحتياجات</span><span data-lang="en" class="hidden">Courses that Meet Needs</span></h3>
-                        <p class="text-gray-400"><span data-lang="ar">تقديم دورات وورش عمل تلبي احتياجات المجتمع والفئات المستهدفة.</span><span data-lang="en" class="hidden">Offering courses that meet the community's and target groups' needs.</span></p>
+                    <div class="card text-center reveal p-8" style="transition-delay: 200ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-dark-blue);"><span data-lang="ar">دورات تلبي الاحتياجات</span><span data-lang="en" class="hidden">Courses that Meet Needs</span></h3>
+                        <p class="text-gray-500"><span data-lang="ar">تقديم دورات وورش عمل تلبي احتياجات المجتمع.</span><span data-lang="en" class="hidden">Offering courses that meet the community's needs.</span></p>
                     </div>
-                    <div class="card text-center reveal" style="transition-delay: 300ms;">
-                        <h3 class="text-xl font-bold mb-3 text-indigo-400"><span data-lang="ar">تنمية المجتمع المحلي</span><span data-lang="en" class="hidden">Community Development</span></h3>
-                        <p class="text-gray-400"><span data-lang="ar">المشاركة في تنمية المجتمع المحلي وتحقيق التكامل معه.</span><span data-lang="en" class="hidden">Participating in the development of the local community and achieving integration.</span></p>
+                    <div class="card text-center reveal p-8" style="transition-delay: 300ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-dark-blue);"><span data-lang="ar">تنمية المجتمع</span><span data-lang="en" class="hidden">Community Development</span></h3>
+                        <p class="text-gray-500"><span data-lang="ar">المشاركة في تنمية المجتمع المحلي وتحقيق التكامل معه.</span><span data-lang="en" class="hidden">Participating in local community development.</span></p>
                     </div>
-                    <div class="card text-center reveal" style="transition-delay: 400ms;">
-                        <h3 class="text-xl font-bold mb-3 text-indigo-400"><span data-lang="ar">بناء الشراكات</span><span data-lang="en" class="hidden">Building Partnerships</span></h3>
-                        <p class="text-gray-400"><span data-lang="ar">بناء شراكات مع مؤسسات محلية وإقليمية ودولية لتبادل الخبرات.</span><span data-lang="en" class="hidden">Building partnerships with local, regional, and international institutions.</span></p>
+                    <div class="card text-center reveal p-8" style="transition-delay: 400ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary-dark-blue);"><span data-lang="ar">بناء الشراكات</span><span data-lang="en" class="hidden">Building Partnerships</span></h3>
+                        <p class="text-gray-500"><span data-lang="ar">بناء شراكات مع مؤسسات محلية وإقليمية ودولية.</span><span data-lang="en" class="hidden">Building partnerships with local and international institutions.</span></p>
                     </div>
                 </div>
             </section>
@@ -309,82 +362,72 @@
                     <span data-lang="ar">لماذا تختارنا؟</span>
                     <span data-lang="en" class="hidden">Why Choose Us?</span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Item 1 -->
-                    <div class="flex items-start space-x-4 rtl:space-x-reverse p-6 bg-gray-800/50 rounded-lg">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                                </svg>
-                            </div>
+                    <div class="card text-center reveal p-8" style="transition-delay: 100ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
                         </div>
-                        <div class="text-start">
-                            <h3 class="text-xl font-bold text-white mb-2">
-                                <span data-lang="ar">برامج معتمدة</span>
-                                <span data-lang="en" class="hidden">Accredited Programs</span>
-                            </h3>
-                            <p class="text-gray-400">
-                                <span data-lang="ar">نقدم برامج معتمدة للتطوير المهني المستمر.</span>
-                                <span data-lang="en" class="hidden">We offer accredited programs for continuous professional development.</span>
-                            </p>
-                        </div>
+                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary-dark-blue);">
+                            <span data-lang="ar">برامج معتمدة</span>
+                            <span data-lang="en" class="hidden">Accredited Programs</span>
+                        </h3>
+                        <p class="text-gray-600">
+                            <span data-lang="ar">نقدم برامج معتمدة للتطوير المهني المستمر.</span>
+                            <span data-lang="en" class="hidden">We offer accredited programs for continuous professional development.</span>
+                        </p>
                     </div>
                     <!-- Item 2 -->
-                    <div class="flex items-start space-x-4 rtl:space-x-reverse p-6 bg-gray-800/50 rounded-lg">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
+                    <div class="card text-center reveal p-8" style="transition-delay: 200ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                         </div>
                         <div class="text-start">
-                            <h3 class="text-xl font-bold text-white mb-2">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--primary-dark-blue);">
                                 <span data-lang="ar">محاضرون خبراء</span>
                                 <span data-lang="en" class="hidden">Expert Lecturers</span>
                             </h3>
-                            <p class="text-gray-400">
+                            <p class="text-gray-600">
                                 <span data-lang="ar">يتم تقديم الدورات من قبل محاضرين خبراء وممارسين في مجالاتهم.</span>
                                 <span data-lang="en" class="hidden">Courses are delivered by expert and practicing lecturers in their fields.</span>
                             </p>
                         </div>
                     </div>
                     <!-- Item 3 -->
-                    <div class="flex items-start space-x-4 rtl:space-x-reverse p-6 bg-gray-800/50 rounded-lg">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                            </div>
+                    <div class="card text-center reveal p-8" style="transition-delay: 300ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
                         </div>
                         <div class="text-start">
-                            <h3 class="text-xl font-bold text-white mb-2">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--primary-dark-blue);">
                                 <span data-lang="ar">تعلم تفاعلي</span>
                                 <span data-lang="en" class="hidden">Interactive Learning</span>
                             </h3>
-                            <p class="text-gray-400">
+                            <p class="text-gray-600">
                                 <span data-lang="ar">نعتمد على أساليب تعلم تفاعلية ومحاكاة واقعية لتعزيز المهارات.</span>
                                 <span data-lang="en" class="hidden">We rely on interactive learning methods and realistic simulations to enhance skills.</span>
                             </p>
                         </div>
                     </div>
                     <!-- Item 4 -->
-                    <div class="flex items-start space-x-4 rtl:space-x-reverse p-6 bg-gray-800/50 rounded-lg">
-                        <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-full bg-indigo-500 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.737 10.512A4.501 4.501 0 0112 8.25c2.43 0 4.438 1.969 4.438 4.438s-1.969 4.438-4.438 4.438a4.501 4.501 0 01-4.263-2.737M6.5 21h11a2 2 0 002-2V5a2 2 0 00-2-2h-11a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                                </svg>
-                            </div>
+                    <div class="card text-center reveal p-8" style="transition-delay: 400ms;">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.737 10.512A4.501 4.501 0 0112 8.25c2.43 0 4.438 1.969 4.438 4.438s-1.969 4.438-4.438 4.438a4.501 4.501 0 01-4.263-2.737M6.5 21h11a2 2 0 002-2V5a2 2 0 00-2-2h-11a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
                         </div>
                         <div class="text-start">
-                            <h3 class="text-xl font-bold text-white mb-2">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--primary-dark-blue);">
                                 <span data-lang="ar">شهادات معترف بها</span>
                                 <span data-lang="en" class="hidden">Recognized Certificates</span>
                             </h3>
-                            <p class="text-gray-400">
+                            <p class="text-gray-600">
                                 <span data-lang="ar">شهاداتنا معترف بها دوليًا وتدعم مسيرتك المهنية.</span>
                                 <span data-lang="en" class="hidden">Our certificates are internationally recognized and support your career path.</span>
                             </p>
@@ -400,27 +443,27 @@
                 </h2>
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1">
-                        <div class="bg-gray-800 p-8 rounded-lg">
-                            <h3 class="text-2xl font-bold text-indigo-400 mb-6 text-start">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold mb-6 text-start" style="color: var(--primary-dark-blue);">
                                 <span data-lang="ar">القطاع الطبي والصحي</span>
                                 <span data-lang="en" class="hidden">Medical & Health Sector</span>
                             </h3>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 text-gray-300">
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>All About Knee</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Clinical Neural Manipulation</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Clinical Dry Needling</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>All about shoulder</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>All about foot and ankle</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>All about TMJ</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>Dry needling therapy</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Lymphedema dysfunction</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Motor control testing</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>Neurological Rehabilitation</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Official Kinetic Control</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Orthopedic Manual Therapy</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>Spinal and Peripheral Manipulation</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Sports physiotherapy</li>
-                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Cupping therapy</li>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 text-gray-700">
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" viewBox="0 0 20 20" fill="currentColor" style="color: var(--secondary-light-green);"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>All About Knee</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Clinical Neural Manipulation</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Clinical Dry Needling</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" viewBox="0 0 20 20" fill="currentColor" style="color: var(--secondary-light-green);"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>All about shoulder</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>All about foot and ankle</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>All about TMJ</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" viewBox="0 0 20 20" fill="currentColor" style="color: var(--secondary-light-green);"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>Dry needling therapy</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Lymphedema dysfunction</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Motor control testing</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" viewBox="0 0 20 20" fill="currentColor" style="color: var(--secondary-light-green);"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>Neurological Rehabilitation</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Official Kinetic Control</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Orthopedic Manual Therapy</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" viewBox="0 0 20 20" fill="currentColor" style="color: var(--secondary-light-green);"><path fill-rule="evenodd" d="M7 2a.5.5 0 01.5.5V4h5V2.5a.5.5 0 011 0V4h.25a2.25 2.25 0 012.25 2.25v.5a.5.5 0 01-1 0v-.5a1.25 1.25 0 00-1.25-1.25H12v1.5a.5.5 0 01-1 0V5H9v1.5a.5.5 0 01-1 0V5H7.5A1.25 1.25 0 006.25 6.25v.5a.5.5 0 01-1 0v-.5A2.25 2.25 0 017.5 4H8V2.5A.5.5 0 017 2zM3.003 8.135a.5.5 0 01 .497-.495l.004-.001H16.5a.5.5 0 01.497.5l-1.23 6.148A2.25 2.25 0 0113.52 16H6.48a2.25 2.25 0 01-2.247-1.852L3.004 8.135z" clip-rule="evenodd" /></svg>Spinal and Peripheral Manipulation</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>Sports physiotherapy</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="color: var(--secondary-light-green);"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>Cupping therapy</li>
                             </ul>
                         </div>
                     </div>
@@ -436,23 +479,23 @@
                     <span data-lang="ar">فريق العمل</span>
                     <span data-lang="en" class="hidden">Meet The Team</span>
                 </h2>
-                <p class="text-center max-w-3xl mx-auto mb-12 text-gray-300" data-lang="ar">مرحباً بكم في أكاديمية أبقراط للتدريب، حيث تلتقي المعرفة بالإلهام. فريقنا هو قوة جماعية من المعلمين والخبراء المتفانين الملتزمين بتشكيل المستقبل من خلال تجارب تعليمية تحويلية.</p>
-                <p class="text-center max-w-3xl mx-auto mb-12 text-gray-300" data-lang="en" class="hidden">Welcome to Hippocrates Training Academy, where knowledge meets inspiration. Our team is a collective force of dedicated educators and experts committed to shaping the future through transformative learning experiences.</p>
+                <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600" data-lang="ar">مرحباً بكم في أكاديمية أبقراط للتدريب، حيث تلتقي المعرفة بالإلهام. فريقنا هو قوة جماعية من المعلمين والخبراء المتفانين الملتزمين بتشكيل المستقبل من خلال تجارب تعليمية تحويلية.</p>
+                <p class="text-center max-w-3xl mx-auto mb-12 text-gray-600" data-lang="en" class="hidden">Welcome to Hippocrates Training Academy, where knowledge meets inspiration. Our team is a collective force of dedicated educators and experts committed to shaping the future through transformative learning experiences.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div class="card reveal" style="transition-delay: 100ms;">
-                        <img src="https://i.imgur.com/3Yw9sZp.png" alt="صورة محمد البنا، المدير العام" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500 object-cover">
+                        <img src="https://i.imgur.com/3Yw9sZp.png" alt="صورة محمد البنا، المدير العام" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" style="border: 4px solid var(--cta-green);">
                         <h3 class="text-xl font-bold">Mohammad Al-Bana</h3>
-                        <p class="text-indigo-400"><span data-lang="ar">المدير العام</span><span data-lang="en" class="hidden">General Director</span></p>
+                        <p style="color: var(--primary-dark-blue);"><span data-lang="ar">المدير العام</span><span data-lang="en" class="hidden">General Director</span></p>
                     </div>
                     <div class="card reveal" style="transition-delay: 200ms;">
-                        <img src="https://i.imgur.com/09L3laG.png" alt="صورة نضال أبو سليم، مدير العلاقات العامة" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500 object-cover">
+                        <img src="https://i.imgur.com/09L3laG.png" alt="صورة نضال أبو سليم، مدير العلاقات العامة" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" style="border: 4px solid var(--cta-green);">
                         <h3 class="text-xl font-bold">Nedal Abu-Salim</h3>
-                        <p class="text-indigo-400"><span data-lang="ar">مدير العلاقات العامة</span><span data-lang="en" class="hidden">Public Relations Manager</span></p>
+                        <p style="color: var(--primary-dark-blue);"><span data-lang="ar">مدير العلاقات العامة</span><span data-lang="en" class="hidden">Public Relations Manager</span></p>
                     </div>
                     <div class="card reveal" style="transition-delay: 300ms;">
-                        <img src="https://i.imgur.com/eBAd8WI.png" alt="صورة عامر الحمدان، المدير المالي" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-indigo-500 object-cover">
+                        <img src="https://i.imgur.com/eBAd8WI.png" alt="صورة عامر الحمدان، المدير المالي" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover" style="border: 4px solid var(--cta-green);">
                         <h3 class="text-xl font-bold">Amer Al-Hamdan</h3>
-                        <p class="text-indigo-400"><span data-lang="ar">المدير المالي</span><span data-lang="en" class="hidden">Financial Manager</span></p>
+                        <p style="color: var(--primary-dark-blue);"><span data-lang="ar">المدير المالي</span><span data-lang="en" class="hidden">Financial Manager</span></p>
                     </div>
                 </div>
             </section>
@@ -462,7 +505,7 @@
                     <span data-lang="ar">شركاؤنا</span>
                     <span data-lang="en" class="hidden">Our Partners</span>
                 </h2>
-                <div class="bg-gray-800 py-12 px-8 rounded-lg">
+                <div class="bg-white py-12 px-8 rounded-lg shadow-md">
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 items-center">
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/Yb7zVjZ.png" alt="شعار Primephysio Sports" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/WHtEMyt.png" alt="شعار Mulligan Concept" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
@@ -478,12 +521,12 @@
 
             <section class="mb-24 reveal">
                 <div class="container mx-auto px-6">
-                    <div class="bg-gradient-to-r from-indigo-600 to-purple-700 rounded-lg p-8 md:p-12 text-center shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+                    <div class="rounded-lg p-8 md:p-12 text-center shadow-2xl transform hover:scale-[1.02] transition-transform duration-500" style="background: linear-gradient(to right, var(--secondary-light-green), var(--cta-green-dark));">
                         <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
                             <span data-lang="ar">ابدأ رحلتك في تطوير مهاراتك</span>
                             <span data-lang="en" class="hidden">Start Your Skill Development Journey</span>
                         </h2>
-                        <a href="https://api.whatsapp.com/send/?phone=962787269996&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center bg-white text-indigo-600 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-110 shadow-lg">
+                        <a href="https://api.whatsapp.com/send/?phone=962787269996&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center bg-white font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-110 shadow-lg" style="color: var(--cta-green-dark);">
                             <span data-lang="ar">تواصل معنا الآن</span>
                             <span data-lang="en" class="hidden">Contact Us Now</span>
                             <svg class="w-6 h-6 ms-3" fill="currentColor" viewBox="0 0 448 512">
@@ -499,34 +542,37 @@
                     <span data-lang="ar">معلومات التواصل</span>
                     <span data-lang="en" class="hidden">Contact Information</span>
                 </h2>
-                <div class="card max-w-4xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-8 text-center md:text-start">
-                        <div class="space-y-6">
-                             <h3 class="text-2xl font-bold text-center md:text-start">
-                                <span data-lang="ar">تواصل معنا!</span>
-                                <span data-lang="en" class="hidden">Let's Connect!</span>
-                             </h3>
-                             <div class="flex items-center justify-center md:justify-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400 me-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                <a href="tel:+962787269996" class="text-lg hover:text-indigo-400" dir="ltr">+962 7 8726 9996</a>
-                             </div>
-                             <div class="flex items-center justify-center md:justify-start">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400 me-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                 <a href="mailto:HTAcademy@mail.com" class="text-lg hover:text-indigo-400">HTAcademy@mail.com</a>
-                             </div>
-                             <div class="flex items-center justify-center md:justify-start">
-                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-400 me-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                 <span class="text-lg"><span data-lang="ar">عمان، الأردن</span><span data-lang="en" class="hidden">Amman, Jordan</span></span>
-                             </div>
+                <div class="card max-w-4xl mx-auto !p-0">
+                    <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200 rtl:divide-x-reverse">
+                        <!-- Phone and Email -->
+                        <div class="p-8 flex flex-col items-center justify-center text-center space-y-6">
+                            <div class="flex flex-col items-center space-y-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green);" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <a href="tel:+962787269996" class="text-lg hover:text-green-600" dir="ltr">+962 7 8726 9996</a>
+                            </div>
+                            <div class="flex flex-col items-center space-y-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green);" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <a href="mailto:HTAcademy@mail.com" class="text-lg hover:text-green-600">HTAcademy@mail.com</a>
+                            </div>
                         </div>
-                        <div class="flex flex-col items-center justify-center space-y-4">
-                            <p class="font-bold">
-                                <span data-lang="ar">تابعنا على وسائل التواصل الاجتماعي:</span>
-                                <span data-lang="en" class="hidden">Follow us on social media:</span>
+                        <!-- Location -->
+                        <div class="p-8 flex flex-col items-center justify-center text-center space-y-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green);" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                             <h3 class="text-xl font-bold" style="color: var(--primary-dark-blue);">
+                                <span data-lang="ar">موقعنا</span>
+                                <span data-lang="en" class="hidden">Our Location</span>
+                             </h3>
+                             <span class="text-lg text-gray-600"><span data-lang="ar">عمان، الأردن</span><span data-lang="en" class="hidden">Amman, Jordan</span></span>
+                        </div>
+                        <!-- Social Media -->
+                        <div class="p-8 flex flex-col items-center justify-center space-y-4">
+                            <p class="font-bold text-xl" style="color: var(--primary-dark-blue);">
+                                <span data-lang="ar">تابعنا</span>
+                                <span data-lang="en" class="hidden">Follow Us</span>
                             </p>
-                            <div class="flex space-x-4">
-                                 <a href="https://www.facebook.com/HTAcademyjo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400" aria-label="Facebook Page"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                                 <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-indigo-400" aria-label="Instagram Profile"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.623c-2.393 0-2.713.01-3.663.052-1.002.046-1.517.208-1.943.372a3.282 3.282 0 00-1.18 1.18c-.164.426-.326.94-.372 1.943-.043.95-.052 1.27-.052 3.663s.01 2.713.052 3.663c.046 1.002.208 1.517.372 1.943a3.282 3.282 0 001.18 1.18c.426.164.94.326 1.943.372.95.043 1.27.052 3.663.052s2.713-.01 3.663-.052c1.002-.046 1.517-.208 1.943-.372a3.282 3.282 0 001.18-1.18c.164-.426.326-.94.372-1.943.043-.95.052-1.27.052-3.663s-.01-2.713-.052-3.663c-.046-1.002-.208-1.517-.372-1.943a3.282 3.282 0 00-1.18-1.18c-.426-.164-.94-.326-1.943-.372C15.028 3.633 14.708 3.623 12.315 3.623zM12 8.118a3.882 3.882 0 110 7.764 3.882 3.882 0 010-7.764zm0 6.132a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zM16.882 6.882a1.227 1.227 0 11-2.454 0 1.227 1.227 0 012.454 0z" clip-rule="evenodd" /></svg></a>
+                            <div class="flex space-x-6">
+                                 <a href="https://www.facebook.com/HTAcademyjo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-800" aria-label="Facebook Page"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                                 <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-600" aria-label="Instagram Profile"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.623c-2.393 0-2.713.01-3.663.052-1.002.046-1.517.208-1.943.372a3.282 3.282 0 00-1.18 1.18c-.164.426-.326.94-.372 1.943-.043.95-.052 1.27-.052 3.663s.01 2.713.052 3.663c.046 1.002.208 1.517.372 1.943a3.282 3.282 0 001.18 1.18c.426.164.94.326 1.943.372.95.043 1.27.052 3.663.052s2.713-.01 3.663-.052c1.002-.046 1.517-.208 1.943-.372a3.282 3.282 0 001.18-1.18c.164-.426.326-.94.372-1.943.043-.95.052-1.27.052-3.663s-.01-2.713-.052-3.663c-.046-1.002-.208-1.517-.372-1.943a3.282 3.282 0 00-1.18-1.18c-.426-.164-.94-.326-1.943-.372C15.028 3.633 14.708 3.623 12.315 3.623zM12 8.118a3.882 3.882 0 110 7.764 3.882 3.882 0 010-7.764zm0 6.132a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zM16.882 6.882a1.227 1.227 0 11-2.454 0 1.227 1.227 0 012.454 0z" clip-rule="evenodd" /></svg></a>
                             </div>
                         </div>
                     </div>
@@ -535,8 +581,8 @@
 
         </main>
 
-        <footer class="bg-gray-800 border-t border-indigo-800 mt-16">
-            <div class="container mx-auto px-6 py-6 text-center text-gray-400">
+        <footer style="background-color: var(--primary-dark-blue); border-top-color: var(--cta-green-dark);" class="border-t mt-16">
+            <div class="container mx-auto px-6 py-6 text-center text-gray-300">
                 <p>
                     <span data-lang="ar">&copy; 2024 أكاديمية أبقراط للتدريب. جميع الحقوق محفوظة.</span>
                     <span data-lang="en" class="hidden">&copy; 2024 Hippocrates Training Academy. All rights reserved.</span>
@@ -688,5 +734,4 @@
 
 </body>
 </html>
-"
 
