@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أكاديمية أبقراط للتدريب - الملف التعريفي</title>
+    <meta name="description" content="أكاديمية أبقراط للتدريب، مركز رائد في تقديم دورات وورش عمل متخصصة في المجالات الصحية، الطبية، والإدارية لتطوير وتعزيز الكوادر المهنية في الأردن.">
     <link rel="icon" type="image/png" href="https://i.imgur.com/vEQQB9o.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -166,7 +167,22 @@
                     <ul class="flex items-center space-x-2">
                         <li><a href="#vision" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
                         <li><a href="#goals" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
-                        <li><a href="#courses" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></a></li>
+                        
+                        <li class="relative group">
+                            <a href="#courses" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300 flex items-center space-x-2 rtl:space-x-reverse">
+                                <span><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></span>
+                                <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                            </a>
+                            <div class="absolute top-full start-0 w-48 bg-white rounded-md shadow-lg z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible pt-3">
+                                <div class="py-1">
+                                    <a href="https://drive.google.com/open?id=1jO67c8QD_QM8F7kGb5gd0MSb9NhiCNzN&usp=drive_fs" target="_blank" rel="noopener noreferrer" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        <span data-lang="ar">اخر الدورات</span>
+                                        <span data-lang="en" class="hidden">Latest Courses</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
                         <li><a href="#team" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
                         <li><a href="#partners" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
                         <li><a href="#contact" class="text-white px-4 py-2 rounded-md font-medium transition-colors duration-300" style="background-color: var(--cta-green);"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
@@ -184,6 +200,12 @@
                     <li><a href="#vision" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
                     <li><a href="#goals" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
                     <li><a href="#courses" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></a></li>
+                    <li>
+                        <a href="https://drive.google.com/open?id=1jO67c8QD_QM8F7kGb5gd0MSb9NhiCNzN&usp=drive_fs" target="_blank" rel="noopener noreferrer" class="block py-2 hover:text-green-300 transition ps-4">
+                            <span data-lang="ar">اخر الدورات</span>
+                            <span data-lang="en" class="hidden">Latest Courses</span>
+                        </a>
+                    </li>
                     <li><a href="#team" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
                     <li><a href="#partners" class="block py-2 hover:text-green-300 transition"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
                     <li><a href="#contact" class="block mt-2 px-4 py-2 rounded-md transition text-center" style="background-color: var(--cta-green);"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
@@ -362,7 +384,7 @@
                     <div class="card-base p-6 rounded-lg transform transition-all duration-300 text-center reveal p-8" style="transition-delay: 400ms;">
                         <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(102, 187, 106, 0.1);">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green-dark);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold mb-3" style="color: var(--primary-dark-blue);"><span data-lang="ar">بناء الشراكات</span><span data-lang="en" class="hidden">Building Partnerships</span></h3>
@@ -543,23 +565,23 @@
 
              <section id="facebook-feed" class="mb-24 reveal">
                  <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: var(--primary-dark-blue);">
-                     <span data-lang="ar">تابعنا على فيسبوك</span>
-                     <span data-lang="en" class="hidden">Follow Us on Facebook</span>
+                      <span data-lang="ar">تابعنا على فيسبوك</span>
+                      <span data-lang="en" class="hidden">Follow Us on Facebook</span>
                  </h2>
                  <div class="max-w-xl mx-auto bg-white p-2 sm:p-4 rounded-lg shadow-md">
-                     <div class="fb-page"
-                          data-href="https://www.facebook.com/HTAcademyjo"
-                          data-tabs="timeline"
-                          data-width="500"
-                          data-height=""
-                          data-small-header="false"
-                          data-adapt-container-width="true"
-                          data-hide-cover="false"
-                          data-show-facepile="true">
-                         <blockquote cite="https://www.facebook.com/HTAcademyjo" class="fb-xfbml-parse-ignore">
-                             <a href="https://www.facebook.com/HTAcademyjo">Hippocrates Training Academy</a>
-                         </blockquote>
-                     </div>
+                      <div class="fb-page"
+                           data-href="https://www.facebook.com/HTAcademyjo"
+                           data-tabs="timeline"
+                           data-width="500"
+                           data-height=""
+                           data-small-header="false"
+                           data-adapt-container-width="true"
+                           data-hide-cover="false"
+                           data-show-facepile="true">
+                           <blockquote cite="https://www.facebook.com/HTAcademyjo" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/HTAcademyjo">Hippocrates Training Academy</a>
+                           </blockquote>
+                      </div>
                  </div>
              </section>
 
@@ -583,8 +605,8 @@
                         <div class="p-8 flex flex-col items-center justify-center text-center space-y-4">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green);" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                              <h3 class="text-xl font-bold" style="color: var(--primary-dark-blue);">
-                                  <span data-lang="ar">موقعنا</span>
-                                  <span data-lang="en" class="hidden">Our Location</span>
+                                   <span data-lang="ar">موقعنا</span>
+                                   <span data-lang="en" class="hidden">Our Location</span>
                              </h3>
                              <span class="text-lg text-gray-600"><span data-lang="ar">عمان، الأردن</span><span data-lang="en" class="hidden">Amman, Jordan</span></span>
                         </div>
@@ -747,7 +769,6 @@
             setLanguage(currentLang);
             setCopyrightYear();
             
-            // *** ADDED: Active Nav Link Highlighting on Scroll Logic ***
             const sections = document.querySelectorAll('main section[id]');
             const navLinks = document.querySelectorAll('header nav ul a.nav-link-underline');
             const header = document.getElementById('page-header');
@@ -755,12 +776,9 @@
 
             const sectionObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // When a section is in view, get its corresponding nav link
                     const link = document.querySelector(`header nav ul a[href="#${entry.target.id}"]`);
                     if (entry.isIntersecting) {
-                        // Remove active class from all other links
                         navLinks.forEach(navLink => navLink.classList.remove('nav-link-active'));
-                        // Add active class to the current link
                         if (link) {
                             link.classList.add('nav-link-active');
                         }
@@ -772,7 +790,7 @@
             });
 
             sections.forEach(section => {
-                if(section.id) { // Ensure section has an ID to observe
+                if(section.id) {
                     sectionObserver.observe(section);
                 }
             });
