@@ -103,12 +103,11 @@
             width: 60%;
         }
         
-        /* *** ADDED: Style for the active navigation link *** */
         .nav-link-active {
-            color: var(--primary-white) !important; /* Make text white */
+            color: var(--primary-white) !important;
         }
         .nav-link-active::after {
-            width: 60%; /* Make underline visible */
+            width: 60%;
         }
 
         /* Back to top button styles */
@@ -139,6 +138,12 @@
         }
         #back-to-top:hover {
             background-color: var(--cta-green-dark);
+        }
+
+        /* تسريع انتقال العتامة */
+        #preloader,
+        #main-content {
+          will-change: opacity;
         }
     </style>
 </head>
@@ -641,10 +646,9 @@
     </button>
     
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v17.0" nonce="FBPLUGIN"></script>
-
+    
     <script>
-        // Mobile menu toggle
+        // --- الكود الأساسي (القائمة، التمرير، اللغة، الخ) ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
@@ -653,7 +657,6 @@
             mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
         });
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -673,53 +676,6 @@
             });
         });
 
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        revealElements.forEach(element => { revealObserver.observe(element); });
-
-        // Counter Animation
-        const statsSection = document.getElementById('stats');
-        const counters = document.querySelectorAll('.counter');
-        let hasAnimatedCounters = false;
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 2000;
-                let start = 0;
-                const step = timestamp => {
-                    if (!start) start = timestamp;
-                    const progress = timestamp - start;
-                    const current = Math.min(Math.floor(progress / duration * target), target);
-                    counter.innerText = current.toLocaleString();
-                    if (progress < duration) {
-                        window.requestAnimationFrame(step);
-                    } else {
-                        counter.innerText = target.toLocaleString();
-                    }
-                };
-                window.requestAnimationFrame(step);
-            });
-        };
-        const statsObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !hasAnimatedCounters) {
-                    animateCounters();
-                    hasAnimatedCounters = true;
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.4 });
-        if (statsSection) { statsObserver.observe(statsSection); }
-
-        // Language Switcher
         const langSwitcherButtons = [document.getElementById('lang-switcher'), document.getElementById('mobile-lang-switcher')];
         let currentLang = localStorage.getItem('preferredLang') || 'ar';
         function setLanguage(lang) {
@@ -746,7 +702,6 @@
             }
         });
 
-        // Back to Top Button
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -757,14 +712,12 @@
         });
         backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // Dynamic Copyright Year
         function setCopyrightYear() {
             const year = new Date().getFullYear();
             document.getElementById('copyright-year').textContent = year;
             document.getElementById('copyright-year-en').textContent = year;
         }
 
-        // Run on page load
         document.addEventListener('DOMContentLoaded', () => {
             setLanguage(currentLang);
             setCopyrightYear();
@@ -796,17 +749,87 @@
             });
         });
 
-        // Preloader
+        // --- الكود الجديد والمحسن للانتقال ---
+
+        // دالة تهيئة عرض العناصر عند الظهور
+        function initReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => revealObserver.observe(el));
+        }
+
+        // دالة تهيئة عدادات الإحصائيات
+        function initCounters() {
+            const statsSection = document.getElementById('stats');
+            if (!statsSection) return;
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimatedCounters = false;
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000;
+                    let start = 0;
+                    const step = timestamp => {
+                        if (!start) start = timestamp;
+                        const progress = timestamp - start;
+                        const current = Math.min(Math.floor(progress / duration * target), target);
+                        counter.innerText = current.toLocaleString();
+                        if (progress < duration) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            counter.innerText = target.toLocaleString();
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                });
+            };
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimatedCounters) {
+                        animateCounters();
+                        hasAnimatedCounters = true;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsSection);
+        }
+
+        // انتقال شاشة التحميل + تأجيل الأعمال غير الحرجة
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             const mainContent = document.getElementById('main-content');
+
             setTimeout(() => {
-                if (preloader) {
-                    preloader.classList.add('opacity-0');
-                    preloader.addEventListener('transitionend', () => preloader.style.display = 'none');
-                }
                 if (mainContent) {
                     mainContent.classList.remove('opacity-0');
+                }
+
+                if (preloader) {
+                    preloader.classList.add('opacity-0');
+                    preloader.addEventListener('transitionend', () => {
+                        preloader.style.display = 'none';
+
+                        setTimeout(() => {
+                            initReveal();
+                            initCounters();
+
+                            const s = document.createElement('script');
+                            s.async = true;
+                            s.defer = true;
+                            s.crossOrigin = 'anonymous';
+                            s.src = 'https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v17.0';
+                            document.body.appendChild(s);
+                        }, 800);
+
+                    }, { once: true });
                 }
             }, 500);
         });
