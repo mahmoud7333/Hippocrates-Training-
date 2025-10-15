@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أكاديمية أبقراط للتدريب - الملف التعريفي</title>
+    <title>أكاديمية أبقراط للتدريب | دورات طبية وصحية معتمدة في الأردن</title>
+    
     <meta name="description" content="أكاديمية أبقراط للتدريب، مركز رائد في تقديم دورات وورش عمل متخصصة في المجالات الصحية، الطبية، والإدارية لتطوير وتعزيز الكوادر المهنية في الأردن.">
     <meta name="google-site-verification" content="A4ZbnCBHaVPs26oBJig7VHjCOdOl3hIpsuB3i7Jfa-8" />
     <link rel="icon" type="image/png" href="https://ik.imagekit.io/mahmoud73/%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A8%D8%AF%D9%88%D9%86%20%D8%B9%D9%86%D9%88%D8%A7%D9%86%20(1).png?updatedAt=1760256136070">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "أكاديمية أبقراط للتدريب",
+      "url": "https://your-website-url.com", // <-- استبدل هذا برابط موقعك الفعلي
+      "logo": "https://ik.imagekit.io/mahmoud73/%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A8%D8%AF%D9%88%D9%86%20%D8%B9%D9%86%D9%88%D8%A7%D9%86%20(1).png?updatedAt=1760256136070",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+962-7-8726-9996",
+        "contactType": "Customer Service"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "عمان",
+        "addressCountry": "JO"
+      },
+      "sameAs": [
+        "https://www.facebook.com/HTAcademyjo"
+      ],
+      "description": "أكاديمية أبقراط للتدريب، مركز رائد في تقديم دورات وورش عمل متخصصة في المجالات الصحية، الطبية، والإدارية لتطوير وتعزيز الكوادر المهنية في الأردن."
+    }
+    </script>
     
     <style>
         :root {
@@ -20,20 +44,18 @@
             --primary-white: #FFFFFF;
             --secondary-light-blue: #90CAF9;
             --secondary-light-green: #43A047;
+            --secondary-light-gray: #F5F5F5;
             --cta-green: #66BB6A;
             --cta-green-dark: #2E7D32;
-            --secondary-light-gray: #F5F5F5;
             --alert-orange: #FFA726;
         }
 
         body {
-            /* [مُحتفظ به] الخط الأساسي: كايرو */
             font-family: 'Cairo', sans-serif;
             background-color: var(--secondary-light-gray);
             color: var(--primary-gray);
         }
         [lang="en"] body {
-            /* [مُحتفظ به] الخط الإنجليزي: بوبينز */
             font-family: 'Poppins', sans-serif;
         }
         .scroll-smooth {
@@ -80,39 +102,6 @@
         @keyframes pulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(102, 187, 106, 0.7); }
             70% { box-shadow: 0 0 0 10px rgba(102, 187, 106, 0); }
-        }
-        
-        /* حركة الأيقونات الرمزية (دوران حول نقطة مركزية) */
-        @keyframes orbit {
-            from { transform: rotate(0deg) translateX(var(--radius)) rotate(0deg); }
-            to { transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg); }
-        }
-
-        /* حركة الأيقونات الرمزية (Dripping Glow) */
-        .symbol-icon-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .symbol-icon {
-            --radius: 120px; /* نصف قطر الدوران */
-            --size: 40px;
-            position: absolute;
-            font-size: var(--size);
-            color: var(--secondary-light-blue);
-            text-shadow: 0 0 15px rgba(144, 202, 249, 0.9), 0 0 5px rgba(144, 202, 249, 0.5);
-            animation: 
-                orbit var(--duration) linear infinite,
-                pulse-glow 3s infinite alternate ease-in-out;
-            opacity: 0.8;
-        }
-        
-        @keyframes pulse-glow {
-            0% { filter: brightness(1); }
-            100% { filter: brightness(1.3); }
         }
 
         /* Animation classes */
@@ -183,7 +172,6 @@
           will-change: opacity;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="scroll-smooth">
     
@@ -211,7 +199,6 @@
                     <ul class="flex items-center space-x-2">
                         <li><a href="#vision" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">رؤيتنا</span><span data-lang="en" class="hidden">Vision</span></a></li>
                         <li><a href="#goals" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">أهدافنا</span><span data-lang="en" class="hidden">Objectives</span></a></li>
-                        
                         <li class="relative group">
                             <a href="#courses" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300 flex items-center space-x-2 rtl:space-x-reverse">
                                 <span><span data-lang="ar">الدورات</span><span data-lang="en" class="hidden">Courses</span></span>
@@ -226,7 +213,6 @@
                                 </div>
                             </div>
                         </li>
-
                         <li><a href="#team" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">الفريق</span><span data-lang="en" class="hidden">Team</span></a></li>
                         <li><a href="#partners" class="nav-link-underline text-gray-200 hover:text-white px-4 py-2 rounded-md font-medium transition-colors duration-300"><span data-lang="ar">شركاؤنا</span><span data-lang="en" class="hidden">Partners</span></a></li>
                         <li><a href="#contact" class="text-white px-4 py-2 rounded-md font-medium transition-colors duration-300" style="background-color: var(--cta-green);"><span data-lang="ar">تواصل معنا</span><span data-lang="en" class="hidden">Contact Us</span></a></li>
@@ -258,27 +244,8 @@
             </div>
         </header>
 
-        <section class="min-h-screen bg-cover bg-center flex items-center justify-center relative overflow-hidden" style="background-image: url('https://ik.imagekit.io/mahmoud73/HTA-Company-Profile-2_page2_image.webp?updatedAt=1760263029817');">
-            
-            <div class="symbol-icon-container absolute inset-0 z-[1] pointer-events-none">
-                
-                <i class="fas fa-heart symbol-icon text-5xl" style="--radius: 140px; --duration: 20s; top: 15%; left: 30%;"></i>
-                <i class="fas fa-brain symbol-icon text-5xl" style="--radius: 100px; --duration: 25s; top: 50%; right: 20%;"></i>
-                <i class="fas fa-bone symbol-icon text-5xl" style="--radius: 160px; --duration: 15s; bottom: 10%; left: 60%;"></i>
-                
-                <i class="fas fa-hand-fist symbol-icon text-3xl" style="--radius: 80px; --duration: 18s; top: 30%; left: 10%; transform: translateX(-50%);"></i>
-                <i class="fas fa-joint symbol-icon text-3xl" style="--radius: 110px; --duration: 22s; top: 70%; left: 5%;"></i>
-                <i class="fas fa-shoe-prints symbol-icon text-3xl" style="--radius: 130px; --duration: 28s; bottom: 5%; right: 35%;"></i>
-                <i class="fas fa-pills symbol-icon text-3xl" style="--radius: 90px; --duration: 35s; top: 20%; right: 10%;"></i>
-                <i class="fas fa-user-injured symbol-icon text-3xl" style="--radius: 170px; --duration: 24s; top: 5%; right: 50%;"></i>
-                
-            </div>
-            
-            <div class="absolute inset-0 z-0" style="
-                background: linear-gradient(rgba(13, 71, 161, 0.75), rgba(13, 71, 161, 0.85)); 
-            "></div>
-            
-            <div class="relative z-10 text-center p-8 text-white">
+        <section class="min-h-screen bg-cover bg-center flex items-center justify-center" style="background-image: linear-gradient(rgba(13, 71, 161, 0.7), rgba(13, 71, 161, 0.7)), url('https://ik.imagekit.io/mahmoud73/HTA-Company-Profile-2_page2_image.webp?updatedAt=1760263029817');">
+            <div class="text-center p-8 text-white">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight animate-fade-in-down">
                     <span data-lang="ar">أكاديمية أبقراط للتدريب</span>
                     <span data-lang="en" class="hidden">Hippocrates Training Academy</span>
@@ -381,12 +348,12 @@
                             <span data-lang="en" class="hidden">Our Vision</span>
                         </h3>
                         <p class="text-gray-600" data-lang="ar">تسعى أكاديمية أبقراط للتدريب لتكون مركزاً تدريبياً رائداً ومتميزاً محلياً وإقليمياً، يركز على تطوير وتعزيز الكوادر الصحية والإدارية والفنية. تهدف الأكاديمية إلى تحقيق الريادة والابتكار والإبداع مع الحفاظ على اعتبارات التكلفة المعقولة.</p>
-                        <p data-lang="en" class="hidden">Hippocrates Training Academy strives to be a leading and distinguished training center locally and regionally, focusing on the development and enhancement of healthcare, administrative, and technical personnel. The academy aims to achieve leadership, innovation, and creativity while maintaining reasonable cost considerations.</p>
+                        <p class="text-gray-600 hidden" data-lang="en">Hippocrates Training Academy strives to be a leading and distinguished training center locally and regionally, focusing on the development and enhancement of healthcare, administrative, and technical personnel. The academy aims to achieve leadership, innovation, and creativity while maintaining reasonable cost considerations.</p>
                     </div>
                     <div class="card-base p-6 rounded-lg transform transition-all duration-300 reveal text-center p-8" style="transition-delay: 300ms;">
                         <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full mb-6" style="background-color: rgba(13, 71, 161, 0.1);">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--primary-dark-blue);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                              </svg>
                         </div>
                         <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-dark-blue);">
@@ -537,22 +504,46 @@
                                 <span data-lang="ar">القطاع الطبي والصحي</span>
                                 <span data-lang="en" class="hidden">Medical & Health Sector</span>
                             </h3>
-                            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-4 text-gray-700">
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All About Knee</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Clinical Neural Manipulation</li>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-gray-700">
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Advanced Spasticity Management</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All About the ACL Workshop</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All About the Ankle Joint</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All About the Cervical Spine</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All About the Knee Joint</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All About the TMJ</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Biophysical Therapy Modalities</li>
                                 <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Clinical Dry Needling</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All about shoulder</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All about foot and ankle</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>All about TMJ</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Dry needling therapy</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Lymphedema dysfunction</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Motor control testing</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Neurological Rehabilitation</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Official Kinetic Control</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Orthopedic Manual Therapy</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Spinal and Peripheral Manipulation</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Sports physiotherapy</li>
-                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Cupping therapy</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Clinical Tape Certification</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Communication Skills</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Courses in Pain Management</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Cranial Manipulation</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Dynamic Cupping Therapy</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Exercise Prescription</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Facilitation Technique (FT)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Gross Motor Function (GMFM)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Hand Function Training</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Hands-On Dissection Lab</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>IASTM Course</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Kinetic Control Course</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Lymphatic Dysfunction</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Men & Women Health</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Mulligan Course (CMP A&B)</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Needling Therapy</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Needling Therapy Master Class</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Neuroplasticity Courses</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>OMTC Certificate</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Osteopathic Mobility Techniques</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Pediatric Rehabilitation</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Pilates in Rehabilitation</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Precision in Practice: MRI</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Rehabilitation for Parkinson’s</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Soft Tissue Management</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Sport Rehabilitation Certificate</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Stroke Management Course</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>The Role of Exercise & Genes</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Vestibular & Balance Rehab</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Visceral Manual Therapy</li>
+                                <li class="flex items-center"><svg class="w-5 h-5 me-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>X-ray Interpretation</li>
                             </ul>
                         </div>
                     </div>
@@ -595,14 +586,22 @@
                 </h2>
                 <div class="bg-white py-12 px-8 rounded-lg shadow-md">
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 items-center">
-                        <div class="flex justify-center items-center"><img src="https://i.imgur.com/Yb7zVjZ.png" alt="شعار Primephysio Sports" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/WHtEMyt.png" alt="شعار Mulligan Concept" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
-                        <div class="flex justify-center items-center"><img src="https://i.imgur.com/TfLDQpi.png" alt="شعار Modern Neuro Rehab" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/tPuyyIS.png" alt="شعار IPTA" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
-                        <div class="flex justify-center items-center"><img src="https://i.imgur.com/acthh4u.png" alt="شعار جمعية العلاج الطبيعي الأردنية" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/ZEo7cav.png" alt="شعار Fascia MTC" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/eFyxRUZ.png" alt="شعار Orthopaedic Manual Therapy Certificate" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
                         <div class="flex justify-center items-center"><img src="https://i.imgur.com/bCnd61T.png" alt="شعار Primephysio Training" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://i.imgur.com/G55g5S8.png" alt="Kinetic Control" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://ik.imagekit.io/mahmoud73/WhatsApp%20Image%202025-10-14%20at%2011.21.21%20PM%20(1).jpeg?updatedAt=1760512349316" alt="شعار شومان" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://ik.imagekit.io/mahmoud73/WhatsApp%20Image%202025-10-11%20at%201.20.53%20AM%20(1).jpeg?updatedAt=1760512349255" alt="شعار برايم" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://ik.imagekit.io/mahmoud73/WhatsApp%20Image%202025-10-14%20at%2011.21.21%20PM.jpeg?updatedAt=1760512348831" alt="شعار الجمعية اليمنيه" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://ik.imagekit.io/mahmoud73/WhatsApp%20Image%202025-10-11%20at%201.20.52%20AM.jpeg?updatedAt=1760512348832" alt="شعار ماسلي اديوكيشن" class="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+
+                        <div class="flex justify-center items-center"><img src="https://i.imgur.com/TfLDQpi.png" alt="شعار Modern Neuro Rehab" class="max-h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://ik.imagekit.io/mahmoud73/WhatsApp%20Image%202025-10-11%20at%201.20.53%20AM.jpeg?updatedAt=1760512349529" alt="شعار D" class="max-h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+                        <div class="flex justify-center items-center"><img src="https://ik.imagekit.io/mahmoud73/WhatsApp%20Image%202025-10-14%20at%2011.25.59%20PM.jpeg?updatedAt=1760512349540" alt="شعار الكالوتي" class="max-h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"></div>
+
                     </div>
                 </div>
             </section>
@@ -626,25 +625,25 @@
             </section>
 
              <section id="facebook-feed" class="mb-24 reveal">
-                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: var(--primary-dark-blue);">
-                         <span data-lang="ar">تابعنا على فيسبوك</span>
-                         <span data-lang="en" class="hidden">Follow Us on Facebook</span>
-                 </h2>
-                 <div class="max-w-xl mx-auto bg-white p-2 sm:p-4 rounded-lg shadow-md">
-                         <div class="fb-page"
-                              data-href="https://www.facebook.com/HTAcademyjo"
-                              data-tabs="timeline"
-                              data-width="500"
-                              data-height=""
-                              data-small-header="false"
-                              data-adapt-container-width="true"
-                              data-hide-cover="false"
-                              data-show-facepile="true">
-                               <blockquote cite="https://www.facebook.com/HTAcademyjo" class="fb-xfbml-parse-ignore">
-                                     <a href="https://www.facebook.com/HTAcademyjo">Hippocrates Training Academy</a>
-                                </blockquote>
-                         </div>
-                 </div>
+                  <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color: var(--primary-dark-blue);">
+                        <span data-lang="ar">تابعنا على فيسبوك</span>
+                        <span data-lang="en" class="hidden">Follow Us on Facebook</span>
+                  </h2>
+                  <div class="max-w-xl mx-auto bg-white p-2 sm:p-4 rounded-lg shadow-md">
+                        <div class="fb-page"
+                             data-href="https://www.facebook.com/HTAcademyjo"
+                             data-tabs="timeline"
+                             data-width="500"
+                             data-height=""
+                             data-small-header="false"
+                             data-adapt-container-width="true"
+                             data-hide-cover="false"
+                             data-show-facepile="true">
+                             <blockquote cite="https://www.facebook.com/HTAcademyjo" class="fb-xfbml-parse-ignore">
+                                  <a href="https://www.facebook.com/HTAcademyjo">Hippocrates Training Academy</a>
+                             </blockquote>
+                        </div>
+                  </div>
              </section>
 
              <section id="contact" class="reveal">
@@ -667,8 +666,8 @@
                         <div class="p-8 flex flex-col items-center justify-center text-center space-y-4">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" style="color: var(--cta-green);" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                              <h3 class="text-xl font-bold" style="color: var(--primary-dark-blue);">
-                                     <span data-lang="ar">موقعنا</span>
-                                     <span data-lang="en" class="hidden">Our Location</span>
+                                <span data-lang="ar">موقعنا</span>
+                                <span data-lang="en" class="hidden">Our Location</span>
                              </h3>
                              <span class="text-lg text-gray-600"><span data-lang="ar">عمان، الأردن</span><span data-lang="en" class="hidden">Amman, Jordan</span></span>
                         </div>
@@ -679,7 +678,7 @@
                             </p>
                             <div class="flex space-x-6">
                                  <a href="https://www.facebook.com/HTAcademyjo" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-blue-800" aria-label="Facebook Page"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                                 <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-600" aria-label="Instagram Profile"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.623c-2.393 0-2.713.01-3.663.052-1.002.046-1.517.208-1.943.372a3.282 3.282 0 00-1.18 1.18c-.164.426-.326.94-.372 1.943-.043.95-.052 1.27-.052 3.663s.01 2.713.052 3.663c.046 1.002.208 1.517.372 1.943a3.282 3.282 0 001.18 1.18c.426.164.94.326 1.943.372.95.043 1.27.052 3.663.052s2.713-.01 3.663-.052c1.002-.046 1.517-.208 1.943-.372a3.282 3.282 0 001.18-1.18c.164-.426.326-.94.372-1.943.043-.95.052-1.27-.052-3.663s-.01-2.713-.052-3.663c-.046-1.002-.208-1.517-.372-1.943a3.282 3.282 0 00-1.18-1.18c-.426-.164-.94-.326-1.943-.372C15.028 3.633 14.708 3.623 12.315 3.623zM12 8.118a3.882 3.882 0 110 7.764 3.882 3.882 0 010-7.764zm0 6.132a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zM16.882 6.882a1.227 1.227 0 11-2.454 0 1.227 1.227 0 012.454 0z" clip-rule="evenodd" /></svg></a>
+                                 <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-pink-600" aria-label="Instagram Profile"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.793 2.013 10.147 2 12.315 2zm0 1.623c-2.393 0-2.713.01-3.663.052-1.002.046-1.517.208-1.943.372a3.282 3.282 0 00-1.18 1.18c-.164.426-.326.94-.372 1.943-.043.95-.052 1.27-.052 3.663s.01 2.713.052 3.663c.046 1.002.208 1.517.372 1.943a3.282 3.282 0 001.18 1.18c.426.164.94.326 1.943.372.95.043 1.27.052 3.663.052s2.713-.01 3.663-.052c1.002-.046 1.517-.208 1.943-.372a3.282 3.282 0 001.18-1.18c.164-.426.326-.94.372-1.943.043-.95.052-1.27.052-3.663s-.01-2.713-.052-3.663c-.046-1.002-.208-1.517-.372-1.943a3.282 3.282 0 00-1.18-1.18c-.426-.164-.94-.326-1.943-.372C15.028 3.633 14.708 3.623 12.315 3.623zM12 8.118a3.882 3.882 0 110 7.764 3.882 3.882 0 010-7.764zm0 6.132a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5zM16.882 6.882a1.227 1.227 0 11-2.454 0 1.227 1.227 0 012.454 0z" clip-rule="evenodd" /></svg></a>
                             </div>
                         </div>
                     </div>
@@ -758,7 +757,6 @@
                 button.addEventListener('click', () => setLanguage(currentLang === 'ar' ? 'en' : 'ar'));
             }
         });
-
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -798,7 +796,6 @@
                 rootMargin: `-${headerHeight}px 0px 0px 0px`,
                 threshold: 0.4 
             });
-
             sections.forEach(section => {
                 if(section.id) {
                     sectionObserver.observe(section);
